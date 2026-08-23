@@ -6,19 +6,35 @@ Developed a machine-learning model to identify customers at high risk of churn, 
 
 ​"In this simulation, you’ll be working with a case team to help a client, PowerCo, investigate a problem with customer churn. PowerCo suspects price sensitivity is driving their customers to switch providers—the data tells a more complex story. Your job is to dig into the data, develop hypotheses, build predictive models, and translate your insights into strategic recommendations." (https://www.theforage.com/virtual-experience/Tcz8gTtprzAS4xSoK/bcg/data-science-ccdz/background-information?step=1)
 
-Insights and recommendations:
+## Insights and recommendations:
 
 - Before offering discounts/deals to customers, we should identify those who have a higher chance of churning
 - When making predictions, oversample the minority class (original dataset is heavily imbalanced)
 - Rather than focusing on high accuracy, focus on the recall metric
 - SMOTE + XGBClassifier seems to offer the best combination to achieve a high recall score for churners
 
-Key Results:
+## Key Results:
 XGBoost + SMOTE achieved 75% recall for the minority churn class, substantially improving identification of at-risk customers compared with the baseline Random Forest model.
 
 # Data Structure 
 
 We are working with a dataset consisting of 14,000+ records that has already been cleaned and has new features. The dataset contained significantly fewer churners than non-churners. To address this class imbalance, SMOTE was applied to the training data only, generating synthetic data of the minority class. This improved the model's ability to identify churners without artificially altering the validation/test distribution.
+
+## Methodology
+
+EDA
+↓
+Train/test split
+↓
+Baseline model (Random Forest)
+↓
+XGBoost
+↓
+SMOTE
+↓
+GridSearchCV
+↓
+Evaluation
 
 # Executive Summary
 
@@ -55,5 +71,9 @@ Based on the insights and findings above, we would recommend our client to consi
 
 Utilize the 75% recall rate model over the others. In this case, precision should not be the main focus. Although the model identifies many false positives, the tradeoff to identify as many churners as possible may be worth it. An argument can be made that offering more "unnecessary" discounts can lead to long-term customer retention, rather than correctly identifying churners to minimize the number of discounts given out.
 
+
+## Technologies
+
+Python, Pandas, Scikit-learn, XGBoost, GridSearchCV
 
 
