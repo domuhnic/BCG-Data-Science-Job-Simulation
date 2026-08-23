@@ -14,7 +14,7 @@ Developed a machine-learning model to identify customers at high risk of churn, 
 - SMOTE + XGBClassifier seems to offer the best combination to achieve a high recall score for churners
 
 ## Key Results:
-XGBoost + SMOTE achieved 75% recall for the minority churn class, substantially improving identification of at-risk customers compared with the baseline Random Forest model.
+XGBoost + SMOTE achieved **75% recall** for the minority churn class, substantially improving identification of at-risk customers compared with the baseline Random Forest model.
 
 # Data Structure 
 
@@ -22,19 +22,7 @@ We are working with a dataset consisting of 14,000+ records that has already bee
 
 ## Methodology
 
-EDA
-↓
-Train/test split
-↓
-Baseline model (Random Forest)
-↓
-XGBoost
-↓
-SMOTE
-↓
-GridSearchCV
-↓
-Evaluation
+EDA - Train/test split - Baseline model (Random Forest) - XGBoost - SMOTE - GridSearchCV - Evaluation
 
 # Executive Summary
 
@@ -64,12 +52,12 @@ Evaluation
 
 # Insights Deep Dive
 
-Because our goal is to correctly identify customers at risk of churning, the main metric to focus on is recall. While the Random Forest Classifier had a weighted average of 90% accuracy, the recall rate for churners was very poor. Using GridSearch to find the optimal models for F! score and recall provided good overall performance metrics, but both managed to only find 16% of all churners. Using XGBClassifier provided overall decent metrics, and increased recall to nearly 50%. XGBClassifier + SMOTE has the worst overall metrics, however it correctly identifies 75% of all churners, which is the goal of this project. 
+Because our goal is to correctly identify customers at risk of churning, the main metric to focus on is recall. While the Random Forest Classifier had a weighted average of 90% precision, the recall rate for churners was very poor, demonstrating how misleading precision can be when working with an imbalanced dataset. Using GridSearch to find the optimal models for F1 score and recall provided solid overall performance metrics, but both managed to only find 16% of all churners. XGBoost improved churn recall to 47% with decent overall metrics, while applying SMOTE increased recall to 75% and the worst overall metrics. This came with an increase in false positives, creating a tradeoff between identifying more potential churners and minimizing unnecessary discounts.
 
 # Recommendations:
 Based on the insights and findings above, we would recommend our client to consider the following:
 
-Utilize the 75% recall rate model over the others. In this case, precision should not be the main focus. Although the model identifies many false positives, the tradeoff to identify as many churners as possible may be worth it. An argument can be made that offering more "unnecessary" discounts can lead to long-term customer retention, rather than correctly identifying churners to minimize the number of discounts given out.
+Use the XGBClassifier + SMOTE model as the predictive model for customer retention. Its 75% recall means the model identifies significantly more potential churners than the alternatives. Although this results in more false positives and  some unnecessary discounts, the cost of these additional offers may be justified if retaining a customer is significantly more valuable than the cost of the discount.
 
 
 ## Technologies
