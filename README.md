@@ -26,13 +26,18 @@ We are working with a dataset consisting of 14,000+ records that has already bee
 
 <img width="358" height="153" alt="image" src="https://github.com/user-attachments/assets/8cf6306b-b9d9-48f0-b5e5-12777e4161ba" />
 
+
 <img width="386" height="155" alt="image" src="https://github.com/user-attachments/assets/6625872d-6bdc-46ad-a7ff-131fcc378a98" />
+
 
 <img width="431" height="126" alt="image" src="https://github.com/user-attachments/assets/2c982a8b-164a-41d8-a784-cc28758cd545" />
 
+
 <img width="475" height="230" alt="image" src="https://github.com/user-attachments/assets/2364e6ed-0eca-419e-af30-ad7c3254d9f9" />
 
+
 <img width="476" height="227" alt="image" src="https://github.com/user-attachments/assets/9b7a350e-6927-4dad-bb67-b69ea003f6c0" />
+
 
 # Insights Deep Dive
 
