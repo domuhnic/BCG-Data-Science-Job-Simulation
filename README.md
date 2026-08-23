@@ -1,17 +1,24 @@
 # BCG-Data-Science-Job-Simulation
 
+Developed a machine-learning model to identify customers at high risk of churn, enabling a telecom company to target retention offers more effectively.
+
 # Project Background
-You will work to help a client analyze their problem with customer churn. Use data analysis and predictive modeling to identify customers who are at high-risk of churning.
+
+​"In this simulation, you’ll be working with a case team to help a client, PowerCo, investigate a problem with customer churn. PowerCo suspects price sensitivity is driving their customers to switch providers—the data tells a more complex story. Your job is to dig into the data, develop hypotheses, build predictive models, and translate your insights into strategic recommendations." (https://www.theforage.com/virtual-experience/Tcz8gTtprzAS4xSoK/bcg/data-science-ccdz/background-information?step=1)
 
 Insights and recommendations:
 
 - Before offering discounts/deals to customers, we should identify those who have a higher chance of churning
 - When making predictions, oversample the minority class (original dataset is heavily imbalanced)
+- Rather than focusing on high accuracy, focus on the recall metric
 - SMOTE + XGBClassifier seems to offer the best combination to achieve a high recall score for churners
 
-# Data Structure & Initial Checks
+Key Results:
+XGBoost + SMOTE achieved 75% recall for the minority churn class, substantially improving identification of at-risk customers compared with the baseline Random Forest model.
 
-We are working with a dataset consisting of 14,000+ records that has already been cleaned and has new features.
+# Data Structure 
+
+We are working with a dataset consisting of 14,000+ records that has already been cleaned and has new features. The dataset contained significantly fewer churners than non-churners. To address this class imbalance, SMOTE was applied to the training data only, generating synthetic data of the minority class. This improved the model's ability to identify churners without artificially altering the validation/test distribution.
 
 # Executive Summary
 
@@ -41,7 +48,7 @@ We are working with a dataset consisting of 14,000+ records that has already bee
 
 # Insights Deep Dive
 
-Because our goal is to correctly identify customers at risk of churning, the main metric to focus on is recall. While the Random Forest Classifier had a weighted average of 90% accuracy, the recall rate for churners was very poor. Using GridSearch to find the optimal models for F! score and recall provided good overall performance metrics, but both managed to only find 16% of all churners. Using XGBClassifier provided overall decent metrics, and increased recall to nearly 50%. XGBClassifier + GridSearch has the worst overall metrics, however it correctly identifies 75% of all churners, which is the goal of this project. 
+Because our goal is to correctly identify customers at risk of churning, the main metric to focus on is recall. While the Random Forest Classifier had a weighted average of 90% accuracy, the recall rate for churners was very poor. Using GridSearch to find the optimal models for F! score and recall provided good overall performance metrics, but both managed to only find 16% of all churners. Using XGBClassifier provided overall decent metrics, and increased recall to nearly 50%. XGBClassifier + SMOTE has the worst overall metrics, however it correctly identifies 75% of all churners, which is the goal of this project. 
 
 # Recommendations:
 Based on the insights and findings above, we would recommend our client to consider the following:
