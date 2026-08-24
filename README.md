@@ -60,7 +60,7 @@ Based on the insights and findings above, we would recommend our client to consi
 Use the XGBClassifier + SMOTE model as the predictive model for customer retention. Its 75% recall means the model identifies significantly more potential churners than the alternatives. Although this results in more false positives and  some unnecessary discounts, the cost of these additional offers may be justified if retaining a customer is significantly more valuable than the cost of the discount.
 
 
-## Technologies
+## Tools Used
 
 Python, Pandas, Scikit-learn, XGBoost, GridSearchCV
 
